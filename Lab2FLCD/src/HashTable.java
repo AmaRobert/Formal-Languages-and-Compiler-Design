@@ -1,8 +1,5 @@
 import com.sun.tools.javac.util.Pair;
 
-import java.util.LinkedList;
-import java.util.List;
-
 public class HashTable {
     private Node[] elements;
     private Integer primeNumber;
@@ -47,7 +44,7 @@ public class HashTable {
         return new Pair<>(-1, -1);
     }
 
-    private Integer hash(String x){
+    public Integer hash(String x){
         Integer sum = 0;
         for(int i=0; i<x.length(); i++){
             sum += x.charAt(i);
