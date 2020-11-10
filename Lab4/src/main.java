@@ -21,6 +21,7 @@ public class main {
         finiteAutomata.read();
         try {
             boolean aux = true;
+            //REVIEW:i would make this menu a function inside the FA
             while (aux) {
                 BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
                 System.out.println("1) Show states");
@@ -60,6 +61,7 @@ public class main {
                         break;
                     case "7":
                         try{
+                            //REVIEW: check if it's DFA first
                             BufferedReader r =  new BufferedReader(new InputStreamReader(System.in));
                             System.out.println("Enter the sequence: ");
                             String sequence = r.readLine();

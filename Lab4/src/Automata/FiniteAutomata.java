@@ -9,6 +9,8 @@ import java.io.IOException;
 import java.util.*;
 
 public class FiniteAutomata {
+    //REVIEW:might as well make the entire class static then since you can only use one input file per execution
+    //make this a parameter,pretty likely to need more than 1 FA (you need 2 for integer and identifier check for example)
     private static final String INPUT_PATH = "source/inputLab4";
     private List<String> alphabet;
     private List<String> states;
@@ -48,12 +50,16 @@ public class FiniteAutomata {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
+            //REVIEW: if an error happens you don't close the reader (i probably don't either in my code :c )
             e.printStackTrace();
         }
     }
 
     public Boolean isDFA(){
         HashMap<Pair<String, String>, Boolean> mapChecker = new HashMap<>();
+        //REVIEW:you can turn this into one foreach : for transition -> check if it exists in map ->yes:return false no:add it
+        //      if foreach finishes return true
+        //this also makes the boolean useless so use Set<Pair> or Map<String startstate,String value>
         for(Transition transition: transitions)
             mapChecker.put(new Pair<>(transition.getStartState(), transition.getValue()), false);
         for(Transition transition: transitions) {
