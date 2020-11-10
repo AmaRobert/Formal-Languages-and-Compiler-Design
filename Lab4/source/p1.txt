@@ -1,4 +1,4 @@
-intreg a, b, c;
+intreg ba, c;
 citeste a;
 citeste b;
 citeste c;
